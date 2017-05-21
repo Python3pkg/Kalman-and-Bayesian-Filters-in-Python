@@ -23,4 +23,4 @@ def euler(t0, tmax, y0, dx, step=1.):
     return y
     
     
-print(euler(0, 4, 1, dx, step=0.25))
+print((euler(0, 4, 1, dx, step=0.25)))

@@ -14,7 +14,7 @@ from numpy.linalg import pinv
 
 
 def print_x(x):
-    print(x[0, 0], x[1, 0], np.degrees(x[2, 0]))
+    print((x[0, 0], x[1, 0], np.degrees(x[2, 0])))
 
 
 def control_update(x, u, dt):
@@ -234,7 +234,7 @@ def ekfloc2(x, P, u, zs, c, m, dt):
         #print('y', y)
 
         x = x + dot(K, y)
-        print('x', x)
+        print(('x', x))
         I = np.eye(P.shape[0])
         I_KH = I - dot(K, H)
 

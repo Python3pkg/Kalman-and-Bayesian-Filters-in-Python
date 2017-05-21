@@ -4,7 +4,7 @@ Created on Sat May 24 19:14:06 2014
 
 @author: rlabbe
 """
-from __future__ import division, print_function
+
 from KalmanFilter import KalmanFilter
 import numpy as np
 import matplotlib.pyplot as plt

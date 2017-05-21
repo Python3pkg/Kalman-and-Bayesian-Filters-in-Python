@@ -447,12 +447,12 @@ def plot_track(ps, actual, zs, cov, std_scale=1,
     std_btm = actual - std
 
     bp.plot_track(actual,c='k')
-    bp.plot_measurements(range(1, count + 1), zs)
-    bp.plot_filter(range(1, count + 1), ps)
+    bp.plot_measurements(list(range(1, count + 1)), zs)
+    bp.plot_filter(list(range(1, count + 1)), ps)
 
     plt.plot(std_top, linestyle=':', color='k', lw=1, alpha=0.4)
     plt.plot(std_btm, linestyle=':', color='k', lw=1, alpha=0.4)
-    plt.fill_between(range(len(std_top)), std_top, std_btm,
+    plt.fill_between(list(range(len(std_top))), std_top, std_btm,
                      facecolor='yellow', alpha=0.2, interpolate=True)
     plt.legend(loc=4)
     plt.xlabel(xlabel)

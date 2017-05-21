@@ -178,7 +178,7 @@ while cindex < len(cmds):
             plt.plot([lmark[0], lmark[0] - d*cos(a+xp[2])], [lmark[1], lmark[1]-d*sin(a+xp[2])], color='r')
 
         ukf.update(z, hx_args=(lmark,))
-        print(ukf.P)
+        print((ukf.P))
     print()
 
     if cindex % 20 == 0:
@@ -193,4 +193,4 @@ plt.plot(track[:, 0], track[:,1], color='k')
 plt.axis('equal')
 plt.title("UKF Robot localization")
 plt.show()
-print(ukf.P.diagonal())
+print((ukf.P.diagonal()))

@@ -5,7 +5,7 @@ Created on Sat Jul 05 09:54:39 2014
 @author: rlabbe
 """
 
-from __future__ import division, print_function
+
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
 import math

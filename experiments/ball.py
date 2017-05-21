@@ -11,7 +11,7 @@ from math import radians, sin, cos, sqrt, exp
 import numpy.random as random
 import matplotlib.markers as markers
 import matplotlib.pyplot as plt
-from RungeKutta import *
+from .RungeKutta import *
 
 
 class BallPath(object):
@@ -241,7 +241,7 @@ def update_drag(f, dt):
     vy = f.x[3,0]
     v = sqrt(vx**2 + vy**2)
     F = -drag_force(v)
-    print F
+    print(F)
     f.u[0,0] = -drag_force(vx)
     f.u[1,0] = -drag_force(vy)
     #f.x[2,0]=F*vx
@@ -310,7 +310,7 @@ def test_kf_drag():
         #x,y = ball.pos_at_t(t)
         update_drag(f1, dt)
         f1.predict()
-        print f1.x.T
+        print(f1.x.T)
         plt.scatter(f1.x[0,0],f1.x[3,0], color='red', alpha=0.5)
         plt.scatter (x,y)
     return f1

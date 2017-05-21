@@ -17,7 +17,7 @@ from filterpy.kalman import ExtendedKalmanFilter as EKF
 
 
 def print_x(x):
-    print(x[0, 0], x[1, 0], np.degrees(x[2, 0]))
+    print((x[0, 0], x[1, 0], np.degrees(x[2, 0])))
 
 
 def normalize_angle(x, index):
@@ -77,7 +77,7 @@ class RobotEKF(EKF):
                    [0., 1., (-w*sinh + w*sinhb)/tan(steering_angle)],
                    [0., 0., 1.]])
 
-        print('F', F)
+        print(('F', F))
 
         V = array(
             [[-r*sinh + r*sinhb, 0],
@@ -105,9 +105,9 @@ class RobotEKF(EKF):
                   w*(-t2-1)*sin(it)/t2)
 
 
-        print(dt*v*(t2+1)*cos(it)/tan(a))
-        print(w*sinh*(-t2-1)/t2)
-        print(w*(-t2-1)*sin(it)/t2)
+        print((dt*v*(t2+1)*cos(it)/tan(a)))
+        print((w*sinh*(-t2-1)/t2))
+        print((w*(-t2-1)*sin(it)/t2))
 
 
 
@@ -125,9 +125,9 @@ class RobotEKF(EKF):
                w*(-tan(a)**2 - 1)*sin(theta)/(tan(a)**2) +
                w*(-tan(a)**2 - 1)*sin(dt*v*tan(a)/w + theta)/(tan(a)**2))
 
-        print(dt*v*(tan(a)**2 + 1)*cos(dt*v*tan(a)/w + theta)/tan(a))
-        print(w*(-tan(a)**2 - 1)*sin(theta)/(tan(a)**2))
-        print(w*(-tan(a)**2 - 1)*sin(dt*v*tan(a)/w + theta)/(tan(a)**2))
+        print((dt*v*(tan(a)**2 + 1)*cos(dt*v*tan(a)/w + theta)/tan(a)))
+        print((w*(-tan(a)**2 - 1)*sin(theta)/(tan(a)**2)))
+        print((w*(-tan(a)**2 - 1)*sin(dt*v*tan(a)/w + theta)/(tan(a)**2)))
 
         '''v11 = (dt*v*(tan(a)**2 + 1)*sin(dt*v*tan(a)/w + theta)/tan(a) +
                w*(-tan(a)**2 - 1)*cos(theta)/tan(a)**2 -
@@ -153,9 +153,9 @@ class RobotEKF(EKF):
 
         fpf = dot(F, self.P).dot(F.T)
         Q =  dot(V, M).dot(V.T)
-        print('FPF', fpf)
-        print('V', V)
-        print('Q', Q)
+        print(('FPF', fpf))
+        print(('V', V))
+        print(('Q', Q))
         print()
         self.P = dot(F, self.P).dot(F.T) + dot(V, M).dot(V.T)
 

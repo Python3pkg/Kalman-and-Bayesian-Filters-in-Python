@@ -149,7 +149,7 @@ def plot_hypothesis1():
 def plot_hypothesis2():
     with figsize(y=2.5):
         plt.figure()
-        plt.errorbar(range(1, 11), [169, 170, 169,171, 170, 171, 169, 170, 169, 170],
+        plt.errorbar(list(range(1, 11)), [169, 170, 169,171, 170, 171, 169, 170, 169, 170],
                      xerr=0, yerr=6, fmt='bo', capthick=2, capsize=10)
         plt.plot([1, 10], [169, 170.5], color='g', ls='--')
         plt.xlim(0, 11); plt.ylim(150, 185)
@@ -164,7 +164,7 @@ def plot_hypothesis3():
     with figsize(y=2.5):
         plt.figure()
 
-        plt.errorbar(range(1, 13), weights,
+        plt.errorbar(list(range(1, 13)), weights,
                      xerr=0, yerr=6, fmt='o', capthick=2, capsize=10)
 
         plt.xlim(0, 13); plt.ylim(145, 185)
@@ -179,7 +179,7 @@ def plot_hypothesis4():
     with figsize(y=2.5):
         plt.figure()
         ave = np.sum(weights) / len(weights)
-        plt.errorbar(range(1,13), weights, label='weights',
+        plt.errorbar(list(range(1,13)), weights, label='weights',
                      yerr=6, fmt='o', capthick=2, capsize=10)
         plt.plot([1, 12], [ave,ave], c='r', label='hypothesis')
         plt.xlim(0, 13); plt.ylim(145, 185)
@@ -192,12 +192,12 @@ def plot_hypothesis5():
     weights = [158.0, 164.2, 160.3, 159.9, 162.1, 164.6,
            169.6, 167.4, 166.4, 171.0, 171.2, 172.6]
 
-    xs = range(1, len(weights)+1)
+    xs = list(range(1, len(weights)+1))
     line = np.poly1d(np.polyfit(xs, weights, 1))
 
     with figsize(y=2.5):
         plt.figure()
-        plt.errorbar(range(1, 13), weights, label='weights',
+        plt.errorbar(list(range(1, 13)), weights, label='weights',
                      yerr=5, fmt='o', capthick=2, capsize=10)
         plt.plot (xs, line(xs), c='r', label='hypothesis')
         plt.xlim(0, 13); plt.ylim(145, 185)
@@ -465,7 +465,7 @@ def set_limits(x, y):
 
 def plot_predictions(p, rng=None, label='Prediction'):
     if rng is None:
-        rng = range(len(p))
+        rng = list(range(len(p)))
     plt.scatter(rng, p, marker='v', s=40, edgecolor='r',
                 facecolor='None', lw=2, label=label)
 
@@ -502,7 +502,7 @@ def plot_measurements(xs, ys=None, color='k', lw=2, label='Measurements',
             return plt.scatter(xs, ys, edgecolor=color, facecolor='none',
                         lw=2, label=label, **kwargs),
         else:
-            return plt.scatter(range(len(xs)), xs, edgecolor=color, facecolor='none',
+            return plt.scatter(list(range(len(xs))), xs, edgecolor=color, facecolor='none',
                         lw=2, label=label, **kwargs),
 
 
@@ -516,7 +516,7 @@ def plot_residual_limits(Ps, stds=1.):
 
     plt.plot(-std, color='k', ls=':', lw=2)
     plt.plot(std, color='k', ls=':', lw=2)
-    plt.fill_between(range(len(std)), -std, std,
+    plt.fill_between(list(range(len(std))), -std, std,
                  facecolor='#ffff00', alpha=0.3)
 
 
@@ -533,7 +533,7 @@ def plot_filter(xs, ys=None, c='#013afe', label='Filter', var=None, **kwargs):
 
     if ys is None:
         ys = xs
-        xs = range(len(ys))
+        xs = list(range(len(ys)))
 
     plt.plot(xs, ys, color=c, label=label, **kwargs)
 

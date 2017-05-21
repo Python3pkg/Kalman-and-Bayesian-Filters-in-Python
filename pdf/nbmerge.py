@@ -20,7 +20,7 @@ def merge_notebooks(filenames):
         else:
             merged.worksheets[0].cells.extend(nb.worksheets[0].cells)
     merged.metadata.name += "_merged"
-    print current.writes(merged, 'json')
+    print(current.writes(merged, 'json'))
 
 if __name__ == '__main__':
     merge_notebooks(sys.argv[1:])

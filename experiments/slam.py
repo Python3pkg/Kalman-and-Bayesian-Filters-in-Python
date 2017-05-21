@@ -176,4 +176,4 @@ cmds = [np.array([1.1, .01])] * 200
 ukf = run_localization(
     cmds, landmarks, sigma_vel=0.1, sigma_steer=np.radians(1),
     sigma_range=0.3, sigma_bearing=0.1)
-print('Final P:', ukf.P.diagonal())
+print(('Final P:', ukf.P.diagonal()))

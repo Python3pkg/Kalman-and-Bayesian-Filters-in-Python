@@ -42,8 +42,8 @@ kf.R[1,1] = 2.**2
 kf.predict()
 kf.update(np.array([radians(45), d]))
 
-print(kf.x)
-print(kf.P)
+print((kf.x))
+print((kf.P))
 
 stats.plot_covariance_ellipse(
        kf.x, cov=kf.P, axis_equal=True, 

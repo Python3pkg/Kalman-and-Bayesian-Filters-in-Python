@@ -8,7 +8,7 @@ Created on Wed Aug 27 06:45:06 2014
 
 @author: rlabbe
 """
-from __future__ import division
+
 from math import pi, exp
 import numpy as np
 from stats import gaussian, multivariate_gaussian, _to_cov

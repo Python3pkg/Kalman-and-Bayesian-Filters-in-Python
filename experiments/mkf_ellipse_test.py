@@ -39,14 +39,14 @@ def plot_track(noise, count, R, Q=0, plot_P=True, title='Kalman Filter'):
         f.predict()
 
     p0, = plt.plot([0,count],[0,count],'g')
-    p1, = plt.plot(range(1,count+1),zs,c='r', linestyle='dashed')
-    p2, = plt.plot(range(1,count+1),ps, c='b')
+    p1, = plt.plot(list(range(1,count+1)),zs,c='r', linestyle='dashed')
+    p2, = plt.plot(list(range(1,count+1)),ps, c='b')
     plt.axis('equal')
     plt.legend([p0,p1,p2], ['actual','measurement', 'filter'], 2)
     plt.title(title)
 
     for i,p in enumerate(cov):
-        print(i,p)
+        print((i,p))
         e = stats.sigma_ellipse (p, i+1, ps[i])
         stats.plot_sigma_ellipse(e, axis_equal=False)
     plt.xlim((-1,count))

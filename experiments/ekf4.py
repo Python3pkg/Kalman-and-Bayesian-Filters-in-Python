@@ -24,7 +24,7 @@ from sympy import Matrix, symbols
 import sympy
 
 def print_x(x):
-    print(x[0, 0], x[1, 0], np.degrees(x[2, 0]))
+    print((x[0, 0], x[1, 0], np.degrees(x[2, 0])))
 
 
 def normalize_angle(x, index):

@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     dog = dog_sensor(noise = 1)
     for i in range(10):
-        print (dog.sense())
+        print((dog.sense()))
 
 
 

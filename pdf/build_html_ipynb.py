@@ -1,8 +1,8 @@
 
-from __future__ import print_function
+
 import IPython.nbformat as nbformat
 
-from formatting import *
+from .formatting import *
 from os.path import join
 
 def prep_for_html_conversion(filename):

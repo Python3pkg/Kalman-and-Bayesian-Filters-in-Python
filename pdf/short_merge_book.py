@@ -1,4 +1,4 @@
-from __future__ import print_function
+
 import io
 import IPython.nbformat as nbformat
 import sys
@@ -7,7 +7,7 @@ import sys
 def remove_formatting(nb):
     c = nb['cells']
     for i in range (len(c)):
-        if 'source' in c[i].keys():
+        if 'source' in list(c[i].keys()):
             if c[i]['source'][0:16] == '#format the book':
                 del c[i]
                 return
@@ -16,7 +16,7 @@ def remove_formatting(nb):
 def remove_links(nb):
     c = nb['cells']
     for i in range (len(c)):
-        if 'source' in c[i].keys():
+        if 'source' in list(c[i].keys()):
             if c[i]['source'][0:19] == '[Table of Contents]':
                 del c[i]
                 return
@@ -25,7 +25,7 @@ def remove_links(nb):
 def remove_links_add_appendix(nb):
     c = nb['cells']
     for i in range (len(c)):
-        if 'source' in c[i].keys():
+        if 'source' in list(c[i].keys()):
             if c[i]['source'][0:19] == '[Table of Contents]':
                 c[i]['source'] = '\\appendix'
                 return

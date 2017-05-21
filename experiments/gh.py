@@ -4,7 +4,7 @@ Created on Thu May 15 16:07:26 2014
 
 @author: RL
 """
-from __future__ import division
+
 import matplotlib.pyplot as plt
 import numpy.random as random
 
@@ -21,7 +21,7 @@ def g_h_filter (data, x, dx, g, h, dt=1.):
 
         dx = dx    + h * (residual / float(dt))
         x  = x_est + g * residual
-        print('gx',dx,)
+        print(('gx',dx,))
 
         results.append(x)
 
@@ -75,7 +75,7 @@ def weight2():
 
         new_w = w_pre * (1-weight_scale) +  z * (weight_scale)
 
-        print('new_w',new_w)
+        print(('new_w',new_w))
 
         gain = gain *(1-gain_scale) + (z - w) * gain_scale/t
 
@@ -84,8 +84,8 @@ def weight2():
 
         #gain = new_gain * (gain_scale) + gain * (1-gain_scale)
         w = new_w
-        print ('w',w,)
-        print ('gain=',gain)
+        print(('w',w,))
+        print(('gain=',gain))
 
 
 def weight3():
@@ -102,7 +102,7 @@ def weight3():
 
         new_w = w_pre * (1-weight_scale) +  z * (weight_scale)
 
-        print('new_w',new_w)
+        print(('new_w',new_w))
 
         gain = gain *(1-gain_scale) + (z - w) * gain_scale/t
 
@@ -111,8 +111,8 @@ def weight3():
 
         #gain = new_gain * (gain_scale) + gain * (1-gain_scale)
         w = new_w
-        print ('w',w,)
-        print ('gain=',gain)
+        print(('w',w,))
+        print(('gain=',gain))
 weight3()
 '''
 #zs = [i + random.randn()*50 for i in range(200)]
@@ -124,7 +124,7 @@ data= g_h_filter(zs, 160, 1, .6, 0, 1.)
 '''
 
 data = g_h_filter([2060], x=0, dx=200, g=1./6, h = 1./10, dt=10)
-print data
+print(data)
 
 
 '''

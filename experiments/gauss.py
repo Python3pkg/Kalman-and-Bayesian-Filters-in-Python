@@ -4,7 +4,7 @@ Created on Tue Apr 22 11:38:49 2014
 
 @author: rlabbe
 """
-from __future__ import division, print_function
+
 import math
 import matplotlib.pyplot as plt
 import numpy.random as random

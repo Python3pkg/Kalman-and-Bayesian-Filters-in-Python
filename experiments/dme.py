@@ -82,10 +82,10 @@ for i in range(count):
     ra,rb = d.range_of(pos)
     rx,ry = d.range_of((i+f1.x[0,0], i+f1.x[2,0]))
     
-    print ra, rb
-    print rx,ry
+    print(ra, rb)
+    print(rx,ry)
     z = np.mat([[ra-rx],[rb-ry]])
-    print z.T
+    print(z.T)
 
     # compute linearized H for this time step
     f1.H = H_of (pos, pos_a, pos_b)

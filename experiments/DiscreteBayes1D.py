@@ -4,8 +4,8 @@ Created on Fri May  2 11:48:55 2014
 
 @author: rlabbe
 """
-from __future__ import division
-from __future__ import print_function
+
+
 
 import copy
 import numpy as np

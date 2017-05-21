@@ -94,7 +94,7 @@ def animate_book(loops=5):
 
         bar_plot(belief)
         plt.pause(0.01)
-    print(f.belief)
+    print((f.belief))
 
 
 import random

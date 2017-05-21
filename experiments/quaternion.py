@@ -67,10 +67,10 @@ def add2(q1, q2):
 e = e2r([10, 0, 0])
 q = e2q(e)
 print(q)
-print(e2d(q2e(q)))
+print((e2d(q2e(q))))
 q2 = add2(q,q)
 print(q2)
 e2 = q2e(q2)
-print(e2d(e2))
+print((e2d(e2)))
 
     

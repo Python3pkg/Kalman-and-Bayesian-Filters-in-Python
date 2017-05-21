@@ -1,8 +1,8 @@
-from __future__ import print_function
+
 import io
 import nbformat
 import sys
-from formatting import *
+from .formatting import *
 
 
 def inplace_change(filename, old_string, new_string):

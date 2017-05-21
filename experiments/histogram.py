@@ -44,12 +44,12 @@ def move(p, U):
 if __name__ == "__main__":
 
     p = sense(p, 'red')
-    print p
+    print(p)
     pause()
     for z in measurements:
         p = sense (p, z)
         p = move (p, 1)
-        print p
+        print(p)
 
 
 

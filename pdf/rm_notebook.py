@@ -1,6 +1,6 @@
 import os, sys, io
 
-print(sys.argv[1])
+print((sys.argv[1]))
 infile = open(sys.argv[1], encoding="utf8")
 data = infile.read()
 infile.close()

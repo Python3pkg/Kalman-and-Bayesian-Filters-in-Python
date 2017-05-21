@@ -28,9 +28,9 @@ def plot_gh_results(weights, estimates, predictions, time_step=0):
 
     n = len(weights)
     if time_step > 0:
-        rng = range(1, n+1)
+        rng = list(range(1, n+1))
     else:
-        rng = range(n, n+1)
+        rng = list(range(n, n+1))
 
     plt.xlim([-1, n+1])
     plt.ylim([156.0, 173])

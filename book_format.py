@@ -77,7 +77,7 @@ def printoptions(*args, **kwargs):
 def _decode_list(data):
     rv = []
     for item in data:
-        if isinstance(item, unicode):
+        if isinstance(item, str):
             item = item.encode('utf-8')
         elif isinstance(item, list):
             item = _decode_list(item)
@@ -88,10 +88,10 @@ def _decode_list(data):
 
 def _decode_dict(data):
     rv = {}
-    for key, value in data.iteritems():
-        if isinstance(key, unicode):
+    for key, value in data.items():
+        if isinstance(key, str):
             key = key.encode('utf-8')
-        if isinstance(value, unicode):
+        if isinstance(value, str):
             value = value.encode('utf-8')
         elif isinstance(value, list):
             value = _decode_list(value)

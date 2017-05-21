@@ -359,7 +359,7 @@ def plot_stratified_resample(a):
         ax.vlines(xs, 0, 1, lw=2)
 
         # make N subdivisions, and chose a random position within each one
-        b = (random(N) + range(N)) / N
+        b = (random(N) + list(range(N))) / N
         plt.scatter(b, [.5]*len(b), s=60, facecolor='k', edgecolor='k')
         bar.set_ticks([])
         plt.title('stratified resampling')
@@ -389,7 +389,7 @@ def plot_systematic_resample(a):
         ax.vlines(xs, 0, 1, lw=2)
 
         # make N subdivisions, and chose a random position within each one
-        b = (random() + np.array(range(N))) / N
+        b = (random() + np.array(list(range(N)))) / N
         plt.scatter(b, [.5]*len(b), s=60, facecolor='k', edgecolor='k')
         bar.set_ticks([])
         plt.title('systematic resampling')

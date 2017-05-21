@@ -66,7 +66,7 @@ def lop_ils(zs, t_pos, pos_est, hx, eps=1.e-6):
     converged = False
     for i in range(20):
         r_est = transmitter_range(pos, t_pos) #B32-B33
-        print('iteration:', i)
+        print(('iteration:', i))
         #print ('ra1, ra2', ra1, ra2)
         print()
 
@@ -76,13 +76,13 @@ def lop_ils(zs, t_pos, pos_est, hx, eps=1.e-6):
 
         #update position estimate
         y = zs - r_est
-        print('residual', y)
+        print(('residual', y))
 
         Hy = np.dot(Hinv, y)
-        print('Hy', Hy)
+        print(('Hy', Hy))
 
         pos = pos + Hy
-        print('pos', pos)
+        print(('pos', pos))
 
         print()
         print()
@@ -95,7 +95,7 @@ def lop_ils(zs, t_pos, pos_est, hx, eps=1.e-6):
 
 
 
-print(lop_ils(rz, t_pos, (900,90), hx=hx_range))
+print((lop_ils(rz, t_pos, (900,90), hx=hx_range)))
 
 
 

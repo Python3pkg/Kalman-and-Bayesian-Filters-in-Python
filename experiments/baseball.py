@@ -13,7 +13,7 @@ LOWER the higher its velocity, which is somewhat counterintuitive.
 """
 
 
-from __future__ import division
+
 import math
 import matplotlib.pyplot as plt
 from numpy.random import randn

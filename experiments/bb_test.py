@@ -5,11 +5,11 @@ Created on Wed Jun  4 12:33:38 2014
 @author: rlabbe
 """
 
-from __future__ import print_function,division
+
 from filterpy.kalman import KalmanFilter
 import numpy as np
 import matplotlib.pyplot as plt
-import baseball
+from . import baseball
 from numpy.random import randn
 
 def ball_filter6(dt,R=1., Q = 0.1):
